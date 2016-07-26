@@ -12,8 +12,17 @@ public class Issue {
     @SerializedName("body")
     private String description;
 
+    @SerializedName("number")
+    private int number;
+
     @SerializedName("user")
     private IssueReporter reporter;
+
+    @SerializedName("state")
+    private String status;
+
+    @SerializedName("updated_at")
+    private String updatedAt;
 
     public String getTitle() {
         return title;
@@ -38,4 +47,30 @@ public class Issue {
     public void setReporter(IssueReporter reporterName) {
         this.reporter = reporterName;
     }
+
+    public int getNumber() {
+        return number;
+    }
+
+    public void setNumber(int number) {
+        this.number = number;
+    }
+
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+    public String getUpdatedAt() {
+        return updatedAt;
+    }
+
+    public void setUpdatedAt(String updatedAt) {
+        this.updatedAt = updatedAt;
+    }
+
 }

@@ -9,6 +9,9 @@ public class IssueReporter {
     @SerializedName("login")
     private String name;
 
+    @SerializedName("avatar_url")
+    private String avatarURL;
+
     public String getName() {
         return name;
     }
@@ -16,5 +19,14 @@ public class IssueReporter {
     public void setName(String name) {
         this.name = name;
     }
+
+    public String getAvatarURL() {
+        return avatarURL;
+    }
+
+    public void setAvatarURL(String avatarURL) {
+        this.avatarURL = avatarURL;
+    }
+
 
 }

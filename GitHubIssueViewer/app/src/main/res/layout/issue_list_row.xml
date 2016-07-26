@@ -2,25 +2,58 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:orientation="horizontal"
+    android:padding="@dimen/issue_view_padding">
+    
+    <ImageView
+        android:id="@+id/reporter_image_view"
+        android:layout_width="@dimen/reporter_image_size"
+        android:layout_height="@dimen/reporter_image_size"
+        android:src="@mipmap/ic_launcher"
+        android:layout_margin="@dimen/reporter_image_margin"/>
 
-    <TextView
-        android:id="@+id/issue_title_textview"
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/title_color_blue"
-        android:padding="@dimen/textview_padding_10"
-        android:textStyle="bold" />
+        android:layout_height="wrap_content">
 
-    <TextView
-        android:id="@+id/issue_description_textview"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:padding="@dimen/textview_padding_10" />
+        <TextView
+            android:id="@+id/reporter_name_textview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/textview_padding_5"
+            android:text="rep name"/>
+        <TextView
+            android:id="@+id/issue_title_textview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/textview_padding_5"
+            android:textStyle="bold"
+            android:layout_below="@id/reporter_name_textview"
+            android:text="issue title"/>
 
-    <TextView
-        android:id="@+id/reporter_name_textview"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:padding="@dimen/textview_padding_10" />
+        <TextView
+            android:id="@+id/issue_status_textview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/textview_padding_5"
+            android:layout_below="@id/issue_title_textview"
+            android:textColor="@android:color/holo_green_dark"/>
+
+        <TextView
+            android:id="@+id/issue_description_textview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/issue_status_textview"
+            android:padding="@dimen/textview_padding_5" />
+
+        <TextView
+            android:id="@+id/updated_time_textview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="italic"
+            android:padding="@dimen/textview_padding_5"
+            android:layout_alignParentRight="true"/>
+
+    </RelativeLayout>
+
 </LinearLayout>
