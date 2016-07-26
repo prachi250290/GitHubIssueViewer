@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">My Application</string>
+    <string name="progress_dialog_msg">Fetching issue list...</string>
 </resources>
