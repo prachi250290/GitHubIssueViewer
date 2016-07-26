@@ -1,5 +1,6 @@
 package com.test.githubissueviewer.myapplication;
 
+import android.content.Context;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -14,6 +15,7 @@ import java.util.List;
 public class IssuesAdapter extends RecyclerView.Adapter<IssuesAdapter.IssueViewHolder> {
 
     private List<Issue> issueList;
+    private Context context;
 
     public class IssueViewHolder extends RecyclerView.ViewHolder {
         public TextView title, description, reporterName;
@@ -27,8 +29,9 @@ public class IssuesAdapter extends RecyclerView.Adapter<IssuesAdapter.IssueViewH
     }
 
 
-    public IssuesAdapter(List<Issue> issueList) {
+    public IssuesAdapter(List<Issue> issueList, Context context) {
         this.issueList = issueList;
+        this.context =  context;
     }
 
     @Override
@@ -44,11 +47,15 @@ public class IssuesAdapter extends RecyclerView.Adapter<IssuesAdapter.IssueViewH
         Issue issue = issueList.get(position);
         holder.title.setText(issue.getTitle());
         holder.description.setText(issue.getDescription());
-        holder.reporterName.setText(issue.getReporterName());
+        holder.reporterName.setText(this.context.getString(R.string.posted_by) + issue.getReporter().getName());
     }
 
     @Override
     public int getItemCount() {
         return issueList.size();
+    }
+
+    public void setIssueList(List<Issue> issueList) {
+        this.issueList = issueList;
     }
 }

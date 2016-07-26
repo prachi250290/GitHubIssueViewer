@@ -1,13 +1,19 @@
 package com.test.githubissueviewer.myapplication;
+import com.google.gson.annotations.SerializedName;
 
 /**
  * Created by prachi on 25/07/16.
  */
 public class Issue {
 
+    @SerializedName("title")
     private String title;
+
+    @SerializedName("body")
     private String description;
-    private String reporterName;
+
+    @SerializedName("user")
+    private IssueReporter reporter;
 
     public String getTitle() {
         return title;
@@ -25,11 +31,11 @@ public class Issue {
         this.description = description;
     }
 
-    public String getReporterName() {
-        return reporterName;
+    public IssueReporter getReporter() {
+        return reporter;
     }
 
-    public void setReporterName(String reporterName) {
-        this.reporterName = reporterName;
+    public void setReporter(IssueReporter reporterName) {
+        this.reporter = reporterName;
     }
 }
