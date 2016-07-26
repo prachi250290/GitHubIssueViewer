@@ -8,9 +8,9 @@
         android:id="@+id/issue_title_textview"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="@dimen/textview_padding_10"
         android:background="@color/title_color_blue"
-        android:textStyle="bold"/>
+        android:padding="@dimen/textview_padding_10"
+        android:textStyle="bold" />
 
     <TextView
         android:id="@+id/issue_description_textview"
@@ -22,5 +22,5 @@
         android:id="@+id/reporter_name_textview"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="@dimen/textview_padding_10"/>
+        android:padding="@dimen/textview_padding_10" />
 </LinearLayout>
