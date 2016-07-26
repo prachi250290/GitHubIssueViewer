@@ -7,6 +7,7 @@ public class Constants {
 
     public static final String QUERY_PARAM_KEY_SORT = "sort";
     public static final String QUERY_PARAM_VALUE_UPDATED = "updated";
+    public static final String QUERY_PARAM_KEY_PAGE = "page";
 
 
 }

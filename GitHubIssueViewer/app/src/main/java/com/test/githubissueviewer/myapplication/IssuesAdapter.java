@@ -17,18 +17,6 @@ public class IssuesAdapter extends RecyclerView.Adapter<IssuesAdapter.IssueViewH
     private List<Issue> issueList;
     private Context context;
 
-    public class IssueViewHolder extends RecyclerView.ViewHolder {
-        public TextView title, description, reporterName;
-
-        public IssueViewHolder(View view) {
-            super(view);
-            title = (TextView) view.findViewById(R.id.issue_title_textview);
-            description = (TextView) view.findViewById(R.id.issue_description_textview);
-            reporterName = (TextView) view.findViewById(R.id.reporter_name_textview);
-        }
-    }
-
-
     public IssuesAdapter(List<Issue> issueList, Context context) {
         this.issueList = issueList;
         this.context =  context;
@@ -57,5 +45,16 @@ public class IssuesAdapter extends RecyclerView.Adapter<IssuesAdapter.IssueViewH
 
     public void setIssueList(List<Issue> issueList) {
         this.issueList = issueList;
+    }
+
+    public class IssueViewHolder extends RecyclerView.ViewHolder {
+        public TextView title, description, reporterName;
+
+        public IssueViewHolder(View view) {
+            super(view);
+            title = (TextView) view.findViewById(R.id.issue_title_textview);
+            description = (TextView) view.findViewById(R.id.issue_description_textview);
+            reporterName = (TextView) view.findViewById(R.id.reporter_name_textview);
+        }
     }
 }
