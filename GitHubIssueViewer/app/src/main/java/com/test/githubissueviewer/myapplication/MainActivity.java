@@ -33,7 +33,7 @@ public class MainActivity extends Activity {
     private boolean isLoading = false;
     private boolean isLastPage = false;
 
-    private int pageNumber = 0;
+    private int pageNumber = 1;
     private static final int PAGE_SIZE = 30;
 
     private static final String TAG = MainActivity.class.getSimpleName();
@@ -64,10 +64,14 @@ public class MainActivity extends Activity {
         }));
 
         Utility.showProgressDialog(this, getString(R.string.progress_dialog_msg));
-        fetchIssues();
+        fetchIssues(pageNumber);
 
     }
 
+
+    /*
+    *Opens the Issue Description Page
+     */
     private void openIssueDescriptionScreen(Issue issue) {
         Intent issueDescriptionIntent = new Intent(MainActivity.this, IssueDescriptionActivity.class);
         issueDescriptionIntent.putExtra(Constants.INTENT_KEY_ISSUE_TITLE, issue.getTitle());
@@ -80,16 +84,15 @@ public class MainActivity extends Activity {
     /*
     * Fetches issues from the Server
     * */
-    private void fetchIssues() {
+    private void fetchIssues(int pageNumber) {
         ApiInterface apiService =
                 ApiClient.getClient().create(ApiInterface.class);
 
-        pageNumber++;
         isLoading = true;
 
         Map<String, String> queryMap = new HashMap<String, String>();
         queryMap.put(Constants.QUERY_PARAM_KEY_SORT, Constants.QUERY_PARAM_VALUE_UPDATED); //Sort by most recently updated issue
-        queryMap.put(Constants.QUERY_PARAM_KEY_PAGE, String.valueOf(pageNumber));
+        queryMap.put(Constants.QUERY_PARAM_KEY_PAGE, String.valueOf(pageNumber)); //Specify the page number
         //By default, the 'state' is 'open' so it will fetch all the 'open' issues
 
         Call<List<Issue>> call = apiService.getIssues(queryMap);
@@ -149,7 +152,7 @@ public class MainActivity extends Activity {
                 if ((visibleItemCount + firstVisibleItemPosition) >= totalItemCount
                         && firstVisibleItemPosition >= 0
                         && totalItemCount >= PAGE_SIZE) {
-                    fetchIssues();
+                    fetchIssues(++pageNumber);
                 }
             }
         }
