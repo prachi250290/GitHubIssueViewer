@@ -72,6 +72,8 @@ public class MainActivity extends Activity {
         Intent issueDescriptionIntent = new Intent(MainActivity.this, IssueDescriptionActivity.class);
         issueDescriptionIntent.putExtra(Constants.INTENT_KEY_ISSUE_TITLE, issue.getTitle());
         issueDescriptionIntent.putExtra(Constants.INTENT_KEY_ISSUE_DESCRIPTION, issue.getDescription());
+        issueDescriptionIntent.putExtra(Constants.INTENT_KEY_REPORTER_NAME, issue.getReporter().getName());
+        issueDescriptionIntent.putExtra(Constants.INTENT_KEY_REPORTER_AVATAR_URL, issue.getReporter().getAvatarURL());
         startActivity(issueDescriptionIntent);
     }
 

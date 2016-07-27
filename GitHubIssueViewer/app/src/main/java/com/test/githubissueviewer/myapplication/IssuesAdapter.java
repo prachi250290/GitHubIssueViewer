@@ -41,7 +41,6 @@ public class IssuesAdapter extends RecyclerView.Adapter<IssuesAdapter.IssueViewH
     public void onBindViewHolder(IssueViewHolder holder, int position) {
         Issue issue = issueList.get(position);
         holder.title.setText(issue.getTitle());
-        //holder.description.setText(issue.getDescription());
         holder.reporterName.setText(issue.getReporter().getName());
         holder.status.setText(issue.getStatus());
         Picasso.with(context).load(issue.getReporter().getAvatarURL()).into(holder.reporterImage);
@@ -62,13 +61,12 @@ public class IssuesAdapter extends RecyclerView.Adapter<IssuesAdapter.IssueViewH
     }
 
     public class IssueViewHolder extends RecyclerView.ViewHolder {
-        public TextView title, description, reporterName, updatedTime, status;
+        public TextView title, reporterName, updatedTime, status;
         public ImageView reporterImage;
 
         public IssueViewHolder(View view) {
             super(view);
             title = (TextView) view.findViewById(R.id.issue_title_textview);
-            description = (TextView) view.findViewById(R.id.issue_description_textview);
             reporterName = (TextView) view.findViewById(R.id.reporter_name_textview);
             updatedTime = (TextView) view.findViewById(R.id.updated_time_textview);
             status =(TextView) view.findViewById(R.id.issue_status_textview);

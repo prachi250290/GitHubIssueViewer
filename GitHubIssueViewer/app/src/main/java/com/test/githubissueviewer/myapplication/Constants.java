@@ -12,6 +12,8 @@ public class Constants {
 
     public static final String INTENT_KEY_ISSUE_TITLE = "title";
     public static final String INTENT_KEY_ISSUE_DESCRIPTION = "description";
+    public static final String INTENT_KEY_REPORTER_NAME = "name";
+    public static final String INTENT_KEY_REPORTER_AVATAR_URL = "avatarurl";
 
 
 
