@@ -20,16 +20,14 @@
             android:id="@+id/reporter_name_textview"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:padding="@dimen/textview_padding_5"
-            android:text="rep name"/>
+            android:padding="@dimen/textview_padding_5"/>
         <TextView
             android:id="@+id/issue_title_textview"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:padding="@dimen/textview_padding_5"
             android:textStyle="bold"
-            android:layout_below="@id/reporter_name_textview"
-            android:text="issue title"/>
+            android:layout_below="@id/reporter_name_textview"/>
 
         <TextView
             android:id="@+id/issue_status_textview"
