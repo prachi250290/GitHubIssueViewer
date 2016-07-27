@@ -24,9 +24,10 @@ public class IssuesAdapter extends RecyclerView.Adapter<IssuesAdapter.IssueViewH
     private List<Issue> issueList;
     private Context context;
     private final static String DATE_FORMAT = "yyyy-MM-dd'T'HH:mm:ss'Z'";
+
     public IssuesAdapter(List<Issue> issueList, Context context) {
         this.issueList = issueList;
-        this.context =  context;
+        this.context = context;
     }
 
     @Override
@@ -45,8 +46,8 @@ public class IssuesAdapter extends RecyclerView.Adapter<IssuesAdapter.IssueViewH
         holder.status.setText(issue.getStatus());
         Picasso.with(context).load(issue.getReporter().getAvatarURL()).into(holder.reporterImage);
 
-        if(issue.getUpdatedAt()!= null && issue.getUpdatedAt()!= "") {
-            holder.updatedTime.setText(DateUtils.getRelativeTimeSpanString(getTimeInMillis(issue.getUpdatedAt()),System.currentTimeMillis(),DateUtils.SECOND_IN_MILLIS));
+        if (issue.getUpdatedAt() != null && issue.getUpdatedAt() != "") {
+            holder.updatedTime.setText(DateUtils.getRelativeTimeSpanString(getTimeInMillis(issue.getUpdatedAt()), System.currentTimeMillis(), DateUtils.SECOND_IN_MILLIS));
 
         }
     }
@@ -69,12 +70,12 @@ public class IssuesAdapter extends RecyclerView.Adapter<IssuesAdapter.IssueViewH
             title = (TextView) view.findViewById(R.id.issue_title_textview);
             reporterName = (TextView) view.findViewById(R.id.reporter_name_textview);
             updatedTime = (TextView) view.findViewById(R.id.updated_time_textview);
-            status =(TextView) view.findViewById(R.id.issue_status_textview);
+            status = (TextView) view.findViewById(R.id.issue_status_textview);
             reporterImage = (ImageView) view.findViewById(R.id.reporter_image_view);
         }
     }
 
-    private long getTimeInMillis (String dateString) {
+    private long getTimeInMillis(String dateString) {
 
         SimpleDateFormat formatter = new SimpleDateFormat(DATE_FORMAT);
         try {

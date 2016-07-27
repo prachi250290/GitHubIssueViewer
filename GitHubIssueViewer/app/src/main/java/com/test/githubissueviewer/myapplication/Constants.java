@@ -8,7 +8,6 @@ public class Constants {
     public static final String QUERY_PARAM_KEY_SORT = "sort";
     public static final String QUERY_PARAM_VALUE_UPDATED = "updated";
     public static final String QUERY_PARAM_KEY_PAGE = "page";
-    public static final String ISSUE_BASE_URL = "https://github.com/rails/rails/issues/";
 
     public static final String INTENT_KEY_ISSUE_TITLE = "title";
     public static final String INTENT_KEY_ISSUE_DESCRIPTION = "description";

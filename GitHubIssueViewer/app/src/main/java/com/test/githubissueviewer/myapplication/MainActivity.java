@@ -57,6 +57,7 @@ public class MainActivity extends Activity {
             public void onClick(View view, int position) {
                 openIssueDescriptionScreen(issueList.get(position));
             }
+
             @Override
             public void onLongClick(View view, int position) {
 
@@ -102,7 +103,7 @@ public class MainActivity extends Activity {
                 Utility.hideProgressDialog();
                 isLoading = false;
                 if (response != null) {
-                    if(response.isSuccessful()) {
+                    if (response.isSuccessful()) {
                         List<Issue> issues = response.body();
 
                         if (issues != null) {
@@ -115,12 +116,12 @@ public class MainActivity extends Activity {
                                 isLastPage = true;
                             }
                         }
-                    }
-                    else {
+                    } else {
                         //Handle failure
                     }
                 }
             }
+
             @Override
             public void onFailure(Call<List<Issue>> call, Throwable t) {
                 // Log error here since request failed
@@ -130,8 +131,9 @@ public class MainActivity extends Activity {
     }
 
 
-
-    /**** RECYCLER VIEW METHODS ****/
+    /****
+     * RECYCLER VIEW METHODS
+     ****/
 
     private RecyclerView.OnScrollListener
             recyclerViewOnScrollListener = new RecyclerView.OnScrollListener() {
@@ -157,9 +159,6 @@ public class MainActivity extends Activity {
             }
         }
     };
-
-
-
 
 
     public interface ClickListener {

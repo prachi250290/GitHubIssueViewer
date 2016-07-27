@@ -17,7 +17,7 @@ public class Utility {
 
     public static void showProgressDialog(Context context, String Message,
                                           boolean cancelable) {
-        if(progressDialog == null) {
+        if (progressDialog == null) {
             progressDialog = new ProgressDialog(context);
         }
         progressDialog.setMessage(Message);
@@ -25,9 +25,8 @@ public class Utility {
         progressDialog.show();
     }
 
-    public static void hideProgressDialog()
-    {
-        if(progressDialog.isShowing()) {
+    public static void hideProgressDialog() {
+        if (progressDialog.isShowing()) {
             progressDialog.cancel();
         }
     }
